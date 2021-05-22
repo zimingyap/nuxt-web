@@ -2,8 +2,7 @@
     <div>
         <b-container class="bv-example-row">
             <b-row>
-                <h1>Hi
-                </h1>
+               
                 <b-col sm="6" offset='3'>        
                     <question-box
                         v-if="questions.length"

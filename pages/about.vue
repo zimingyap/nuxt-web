@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>This is a recipe app</h1>
+        <h1>This is a nuxt app</h1>
 
     </div>
 </template>
