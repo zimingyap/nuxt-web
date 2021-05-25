@@ -11,6 +11,9 @@
                   <li>
                     <nuxt-link to="/recipes">Recipe</nuxt-link>
                 </li>
+                <li>
+                    <nuxt-link to="/quiz">Quiz</nuxt-link>
+                </li>
             </ul>
         </h1>
     </header>
