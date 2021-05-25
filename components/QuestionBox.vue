@@ -1,7 +1,6 @@
 <template>
     <div class="question-box-container">
         <b-jumbotron>
-
             <template slot="lead">
                {{currentQuestion.question}}
             </template>
@@ -96,6 +95,7 @@ import _ from 'lodash'
 <style >
     .question-box-container{
         padding-top: 20px;
+        
     }
     .list-group-item:hover {
         background-color: #EEE;

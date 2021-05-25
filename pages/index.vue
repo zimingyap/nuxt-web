@@ -2,14 +2,19 @@
     <div>
         <b-container class="bv-example-row">
             <b-row>
-               
-                <b-col sm="6" offset='3'>        
-                    <question-box
+                <b-col sm="6" offset='3'>
+                    <QuestionBox   
+                    v-if="questions.length"
+                        :currentQuestion="questions[index]"
+                        :next="next"
+                        :increment="increment"
+                        />    
+                    <!-- <question-box
                         v-if="questions.length"
                         :currentQuestion="questions[index]"
                         :next="next"
                         :increment="increment"
-                    />
+                    /> -->
                 </b-col>
                 
             </b-row>

@@ -7,6 +7,7 @@
 
 <script>
 export default {
+   
     head(){
         return{
             title: 'About the app',
