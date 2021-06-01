@@ -38,6 +38,7 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+
     '@nuxtjs/pwa',
   ],
 
@@ -45,6 +46,8 @@ export default {
   modules: [
       '@nuxtjs/axios',
       '@nuxtjs/auth-next',
+      '@nuxtjs/pwa',
+      
   ],
   auth:{
 
@@ -52,5 +55,11 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+
+  pwa: {
+      manifest: {
+          theme_color: "#4A90E2",
+      }
   }
 }
