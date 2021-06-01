@@ -25,6 +25,18 @@
 <script>
 import QuestionBox from '../components/QuestionBox.vue'
     export default {
+        head(){
+        return{
+            title: 'Quiz',
+            meta: [
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content: 'Quiz app'
+                }
+            ]
+        };
+    },
         components: {
             QuestionBox
         },

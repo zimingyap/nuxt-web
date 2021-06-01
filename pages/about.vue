@@ -1,7 +1,7 @@
 <template>
     <div>
         <h1>This is a nuxt app</h1>
-
+        <Nuxt />
     </div>
 </template>
 
