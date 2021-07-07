@@ -70,19 +70,8 @@ export default {
             recipes: []
         }
     },
-    async created(){
-        const config = {
-            headers: {
-                'Accept': "application/json"
-            }
-        }
-        try {
-            const res = await axios.get('www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata', config);
-            console.log(res.data);
-        }
-        catch (err){
-            console.log(err);
-        }
+    
+       mounted: function(){
         const searchBtn = document.getElementById('search-btn');
         const mealList = document.getElementById('meal');
         const mealDetailsContent = document.querySelector('.meal-details-content');
@@ -156,7 +145,8 @@ export default {
             mealDetailsContent.innerHTML = html;
             mealDetailsContent.parentElement.classList.add('showRecipe');
         }
-    },
+       },
+    
     head(){
         return{
             title: 'Recipe',

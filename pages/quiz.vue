@@ -3,7 +3,7 @@
         <b-container class="bv-example-row">
             <b-row>
                 <b-col sm="6" offset='3'>
-                    <QuestionBox   
+                    <LazyQuestionBox   
                     v-if="questions.length"
                         :currentQuestion="questions[index]"
                         :next="next"
@@ -59,17 +59,21 @@ import QuestionBox from '../components/QuestionBox.vue'
                 this.numTotal++
             }
         },
-        mounted: function(){
-            fetch("https://opentdb.com/api.php?amount=50&category=9", {
-                method: 'get'
-            })
-            .then((response)=> {
-                return (response.json());
-            })
-            .then((jsonData) => {
-                this.questions = jsonData.results
-            })
-        },
+        // mounted: function(){
+        //     fetch("https://opentdb.com/api.php?amount=50&category=9", {
+        //         method: 'get'
+        //     })
+        //     .then((response)=> {
+        //         return (response.json());
+        //     })
+        //     .then((jsonData) => {
+        //         this.questions = jsonData.results
+        //     })
+        // },
+        async fetch() {
+            this.questions = await fetch('https://opentdb.com/api.php?amount=50&category=9',{ method: 'get'}).then(res => 
+            res.json()).then(jsonData => this.questions = jsonData.results);
+        }
     }
 </script>
 

@@ -38,8 +38,7 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-
-    '@nuxtjs/pwa',
+    '@nuxtjs/vuetify',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -60,6 +59,10 @@ export default {
   pwa: {
       manifest: {
           theme_color: "#4A90E2",
+      },
+      workbox: {
+          cacheNames: 'my-app-nuxt',
+          offlineStrategy: 'CacheFirst',
       }
   }
 }

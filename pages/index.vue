@@ -1,7 +1,7 @@
 <template>
 
     <div>
-       <h1>Home page</h1>
+       <h1>testing PWA</h1>
         
         <b-button v-if="deferredPrompt"
             v-b-modal.modal>
