@@ -1,20 +1,25 @@
 <template>
   <div>
+      <div v-if="$device.isIos"><InstallAppButtonIOS/></div>
+      <div v-else-if="!$device.isIos"><InstallAppButton/></div>
+      
       <AppHeader/>
     
     <Nuxt keep-alive/>
-    <!-- <div variant='danger' v-if="$nuxt.isOffline">{{offlineToast('danger')}}</div>
-    <div v-if="$nuxt.isOffline"> <h1>offline</h1> </div> -->
     
-  </div>
+  </div>    
 </template>
 <script>
 import AppHeader from '../components/AppHeader..vue';
+import InstallAppButton from '../components/InstallAppButton.vue';
+import InstallAppButtonIOS from '../components/InstallAppButtonIOS.vue';
+
 export default {
 
     components: {
         AppHeader,
-        
+        InstallAppButton,
+        InstallAppButtonIOS
     },
     computed: {
         connectionStatus() {

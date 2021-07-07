@@ -2,8 +2,7 @@
 
     <div>
        <h1>testing PWA</h1>
-        
-        <b-button v-if="deferredPrompt"
+        <!-- <b-button v-if="deferredPrompt"
             v-b-modal.modal>
                 Install app
         </b-button>
@@ -14,13 +13,14 @@
                 <b-button  @click="dismiss">Close Modal</b-button>
                 <b-button  @click="install" >Install</b-button>
             </div>
-        </b-modal>
+        </b-modal> -->
     </div>
   
 </template>
 
 <script>
 export default {
+    // layout: (ctx) => ctx.$device.isMobile ? 'mobile' : 'default',
     data() {
         return {
             deferredPrompt : null
@@ -28,27 +28,27 @@ export default {
     },
    
     
-    mounted() {
-        window.addEventListener("beforeinstallprompt", e => {
-            e.preventDefault();
-            this.deferredPrompt = e;
-        });
-        window.addEventListener("appinstalled", () => {
-            this.deferredPrompt = null;
-        });
-    },
+    // mounted() {
+    //     window.addEventListener("beforeinstallprompt", e => {
+    //         e.preventDefault();
+    //         this.deferredPrompt = e;
+    //     });
+    //     window.addEventListener("appinstalled", () => {
+    //         this.deferredPrompt = null;
+    //     });
+    // },
 
-    methods: {
-        async dismiss() {
-            this.deferredPrompt = null;
-            this.$root.$emit('bv::hide::modal', 'modal', '#btnShow')
-        },
+    // methods: {
+    //     async dismiss() {
+    //         this.deferredPrompt = null;
+    //         this.$root.$emit('bv::hide::modal', 'modal', '#btnShow')
+    //     },
 
-        async install(){
-            this.deferredPrompt.prompt();
-            this.$root.$emit('bv::toggle::modal', 'modal', '#btnToggle')
-        },
-    }
+    //     async install(){
+    //         this.deferredPrompt.prompt();
+    //         this.$root.$emit('bv::toggle::modal', 'modal', '#btnToggle')
+    //     },
+    // }
 }
 </script>
 
