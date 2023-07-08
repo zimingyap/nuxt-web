@@ -1,5 +1,5 @@
 # Recipe
-
+Recepedia, a recipe website build with Nuxt
 ## Build Setup
 
 ```bash
